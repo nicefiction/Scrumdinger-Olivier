@@ -13,9 +13,11 @@ struct ScrumdingerOlivierApp: App {
     // MARK: - INITIALIZERS
     // MARK: - COMPUTED PROPERTIES
     var body: some Scene {
-        
+        /// `WindowGroup` is one of the primitive scenes that SwiftUI provides.
+        /// In iOS, the views you add to the `WindowGroup` scene builder
+        /// are presented in a window that fills the device’s entire screen:
         WindowGroup {
-            MeetingView()
+            ScrumsView(dailyScrums: DailyScrum.sampleData)
         }
     }
     

@@ -18,8 +18,7 @@ struct ScrumsView: View {
     var body: some View {
     
         List {
-            ForEach(dailyScrums,
-                    id: \.title) { (eachDailyScrum: DailyScrum) in
+            ForEach(dailyScrums) { (eachDailyScrum: DailyScrum) in
                 CardView(dailyScrum: eachDailyScrum)
                     .listRowBackground(eachDailyScrum.theme.mainColor)
             }

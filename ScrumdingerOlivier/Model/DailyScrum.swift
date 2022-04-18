@@ -9,12 +9,13 @@ import Foundation
 
 
 
-struct DailyScrum {
+struct DailyScrum: Identifiable {
     
     // MARK: - NESTED TYPES
     // MARK: - STATIC PROPERTIES
     // MARK: - PROPERTY WRAPPERS
     // MARK: - PROPERTIES
+    let id: UUID
     let title: String
     let attendees: Array<String>
     let lengthInMinutes: Int
@@ -23,6 +24,21 @@ struct DailyScrum {
     
     
     // MARK: - INITIALIZERS
+    init(id: UUID = UUID.init(),
+         title: String,
+         attendees: Array<String>,
+         lengthInMinutes: Int,
+         theme: Theme) {
+        
+        self.id = id
+        self.title = title
+        self.attendees = attendees
+        self.lengthInMinutes = lengthInMinutes
+        self.theme = theme
+    }
+    
+    
+    
     // MARK: - COMPUTED PROPERTIES
     // MARK: - STATIC METHODS
     // MARK: - METHODS

@@ -62,7 +62,6 @@
 			isa = PBXGroup;
 			children = (
 				C5080CC2280DBA1900B48BFD /* ScrumdingerOlivierApp.swift */,
-				C5080CC4280DBA1900B48BFD /* MeetingView.swift */,
 				C5080CC6280DBA1A00B48BFD /* Assets.xcassets */,
 				C5080CC8280DBA1A00B48BFD /* Preview Content */,
 				C5080CD0280DBAD800B48BFD /* Model */,
@@ -93,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				C5080CD7280DDD9600B48BFD /* CardView.swift */,
+				C5080CC4280DBA1900B48BFD /* MeetingView.swift */,
 				C5080CDB280DF4F800B48BFD /* ScrumsView.swift */,
 			);
 			path = View;
