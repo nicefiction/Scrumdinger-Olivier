@@ -37,7 +37,10 @@ struct CardView: View {
                 Spacer()
                 Label("\(dailyScrum.lengthInMinutes)",
                       systemImage: "clock")
-                    .padding(.trailing, 20)
+//                    .padding(.trailing, 20)
+                .labelStyle(.trailingIcon)
+                /// The clock icon now aligns on the trailing edge,
+                /// mirroring the leading label for the number of attendees.
             }
             .font(.caption)
         }

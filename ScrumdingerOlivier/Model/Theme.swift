@@ -39,6 +39,9 @@ enum Theme: String {
     }
     
     
+    /// Add a `Color` property named `mainColor`
+    ///  that creates a color using the enumeration’s rawValue.
+    ///  This property initializes a color from the asset catalog.
     var mainColor: Color {
         Color(rawValue)
     }
