@@ -17,18 +17,33 @@ struct MeetingView: View {
             ProgressView.init(value: 5,
                               total: 15)
             HStack {
-                VStack {
+                VStack(alignment: .leading) {
                     Text("Seconds Elapsed")
+                        .font(.caption)
                     Label("300",
                           systemImage: "hourglass.bottomhalf.filled")
                 }
-                VStack {
+                Spacer()
+                VStack(alignment: .trailing) {
                     Text("Seconds Remaining")
+                        .font(.caption)
                     Label("600",
                           systemImage: "hourglass.tophalf.filled")
                 }
             }
+            Circle()
+                .strokeBorder(lineWidth: 24.0)
+            HStack {
+                Text("Speaker 1 of 3")
+                Spacer()
+                Button(action: {},
+                       label: {
+                    Image(systemName: "forward.fill")
+                    
+                })
+            }
         }
+        .padding()
     }
     /*
      VStack {
