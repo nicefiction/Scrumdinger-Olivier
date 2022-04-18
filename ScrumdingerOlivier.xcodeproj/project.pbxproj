@@ -15,6 +15,7 @@
 		C5080CD5280DD8D300B48BFD /* DailyScrum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5080CD4280DD8D300B48BFD /* DailyScrum.swift */; };
 		C5080CD8280DDD9600B48BFD /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5080CD7280DDD9600B48BFD /* CardView.swift */; };
 		C5080CDA280DEE3D00B48BFD /* TrailingIconLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5080CD9280DEE3D00B48BFD /* TrailingIconLabelStyle.swift */; };
+		C5080CDC280DF4F800B48BFD /* ScrumsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5080CDB280DF4F800B48BFD /* ScrumsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		C5080CD4280DD8D300B48BFD /* DailyScrum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyScrum.swift; sourceTree = "<group>"; };
 		C5080CD7280DDD9600B48BFD /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		C5080CD9280DEE3D00B48BFD /* TrailingIconLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingIconLabelStyle.swift; sourceTree = "<group>"; };
+		C5080CDB280DF4F800B48BFD /* ScrumsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				C5080CD7280DDD9600B48BFD /* CardView.swift */,
+				C5080CDB280DF4F800B48BFD /* ScrumsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				C5080CD5280DD8D300B48BFD /* DailyScrum.swift in Sources */,
 				C5080CDA280DEE3D00B48BFD /* TrailingIconLabelStyle.swift in Sources */,
 				C5080CD3280DD6CA00B48BFD /* Theme.swift in Sources */,
+				C5080CDC280DF4F800B48BFD /* ScrumsView.swift in Sources */,
 				C5080CC5280DBA1900B48BFD /* MeetingView.swift in Sources */,
 				C5080CC3280DBA1900B48BFD /* ScrumdingerOlivierApp.swift in Sources */,
 				C5080CD8280DDD9600B48BFD /* CardView.swift in Sources */,

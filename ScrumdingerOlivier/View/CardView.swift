@@ -31,12 +31,17 @@ struct CardView: View {
         VStack(alignment: .leading) {
             Text(dailyScrum.title)
                 .font(.headline)
+            /// This modifier helps convey the information architecture of the view
+            /// by reading the scrum title, followed by “heading.”:
+                .accessibilityAddTraits(.isHeader)
             HStack {
                 Label("\(dailyScrum.attendees.count)",
                       systemImage: "person.3.fill")
+                .accessibilityLabel("\(dailyScrum.attendees.count) attendees")
                 Spacer()
                 Label("\(dailyScrum.lengthInMinutes)",
                       systemImage: "clock")
+                .accessibilityLabel("\(dailyScrum.lengthInMinutes) minute meeting")
 //                    .padding(.trailing, 20)
                 .labelStyle(.trailingIcon)
                 /// The clock icon now aligns on the trailing edge,
