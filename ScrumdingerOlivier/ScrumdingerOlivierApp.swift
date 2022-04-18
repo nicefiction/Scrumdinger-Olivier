@@ -59,3 +59,9 @@ struct ScrumdingerOlivierApp: App {
  // MARK: - METHODS
  // MARK: - HELPER METHODS
  */
+/*
+ // MARK: - PREVIEWS
+ 
+ // MARK: - STATIC PROPERTIES
+ // MARK: - COMPUTED PROPERTIES
+ */

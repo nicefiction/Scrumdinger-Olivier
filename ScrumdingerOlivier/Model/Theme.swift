@@ -32,7 +32,7 @@ enum Theme: String {
         
         switch self {
         case .bubblegum, .buttercup, .lavender, .orange, .periwinkle, .poppy, .seafoam, .sky, .tan, .teal, .yellow:
-            return .white
+            return .black
         case .indigo, .magenta, .navy, .oxblood, .purple:
             return .white
         }
