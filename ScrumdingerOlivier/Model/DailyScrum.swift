@@ -17,7 +17,7 @@ struct DailyScrum: Identifiable {
     // MARK: - PROPERTIES
     let id: UUID
     let title: String
-    let attendees: Array<String>
+    let attendees: Array<DailyScrum.Attendee>
     let lengthInMinutes: Int
     let theme: Theme
     
@@ -32,7 +32,11 @@ struct DailyScrum: Identifiable {
         
         self.id = id
         self.title = title
-        self.attendees = attendees
+        self.attendees = attendees.map { (eachName: String) in
+            Attendee(name: eachName)
+            /// Now that attendee names are uniquely identifiable,
+            /// you can add the attendees to the detail view.
+        }
         self.lengthInMinutes = lengthInMinutes
         self.theme = theme
     }
@@ -50,6 +54,33 @@ struct DailyScrum: Identifiable {
 
 
 extension DailyScrum {
+    
+    // MARK: - NESTED TYPES
+    struct Attendee: Identifiable {
+        
+        // MARK: - NESTED TYPES
+        // MARK: - STATIC PROPERTIES
+        // MARK: - PROPERTY WRAPPERS
+        // MARK: - PROPERTIES
+        let id: UUID
+        var name: String
+        
+        
+        
+        // MARK: - INITIALIZERS
+        init(id: UUID = UUID.init(),
+             name: String) {
+            
+            self.id = id
+            self.name = name
+        }
+        // MARK: - COMPUTED PROPERTIES
+        // MARK: - STATIC METHODS
+        // MARK: - METHODS
+        // MARK: - HELPER METHODS
+    }
+    
+    
     
     // MARK: - STATIC PROPERTIES
     static let sampleData: Array<DailyScrum> = [

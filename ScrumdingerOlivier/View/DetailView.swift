@@ -45,6 +45,11 @@ struct DetailView: View {
                 }
                 .accessibilityElement(children: .combine)
             }
+            Section(header: Text("attendees")) {
+                ForEach(dailyScrum.attendees) { (eachAttendee: DailyScrum.Attendee) in
+                    Label(eachAttendee.name, systemImage: "person")
+                }
+            }
         }
     }
     
