@@ -17,7 +17,7 @@ struct DailyScrum: Identifiable {
     // MARK: - PROPERTIES
     let id: UUID
     let title: String
-    let attendees: Array<DailyScrum.Attendee>
+    let attendees: Array<Attendee>
     let lengthInMinutes: Int
     let theme: Theme
     

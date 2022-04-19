@@ -19,10 +19,13 @@ struct DetailView: View {
     
         List {
             Section("meeting info") {
-                Label("Start Meeting",
-                      systemImage: "timer")
-                    .font(.headline)
+                NavigationLink(destination: {MeetingView()},
+                               label: {
+                    Label("Start Meeting",
+                          systemImage: "timer")
+                        .font(.headline)
                     .foregroundColor(.accentColor)
+                })
                 HStack {
                     Label("Length",
                           systemImage: "clock")
@@ -51,6 +54,7 @@ struct DetailView: View {
                 }
             }
         }
+        .navigationTitle(dailyScrum.title)
     }
     
     
