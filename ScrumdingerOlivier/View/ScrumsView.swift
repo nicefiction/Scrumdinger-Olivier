@@ -19,9 +19,19 @@ struct ScrumsView: View {
     
         List {
             ForEach(dailyScrums) { (eachDailyScrum: DailyScrum) in
-                CardView(dailyScrum: eachDailyScrum)
-                    .listRowBackground(eachDailyScrum.theme.mainColor)
+                NavigationLink(destination: Text(eachDailyScrum.title)) {
+                    CardView(dailyScrum: eachDailyScrum)
+                }
+                .listRowBackground(eachDailyScrum.theme.mainColor)
             }
+        }
+        .navigationTitle("Daily Scrums")
+        .toolbar {
+            Button(action: {},
+                   label: {
+                Image(systemName: "plus.circle")
+            })
+            .accessibilityLabel("New Scrum")
         }
     }
     
@@ -43,6 +53,10 @@ struct ScrumsView_Previews: PreviewProvider {
     // MARK: - COMPUTED PROPERTIES
     static var previews: some View {
         
-        ScrumsView(dailyScrums: DailyScrum.sampleData)
+        NavigationView {
+            
+            ScrumsView(dailyScrums: DailyScrum.sampleData)
+        }
+        //.navigationTitle("Scrumdinger")
     }
 }
