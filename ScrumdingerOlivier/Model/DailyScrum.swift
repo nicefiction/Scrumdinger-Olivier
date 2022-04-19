@@ -82,6 +82,19 @@ extension DailyScrum {
     
     
     
+    ///By making `Data` a nested type,
+    ///you keep `DailyScrum.Data` distinct from
+    ///the `Data` structure defined in the `Foundation` framework.
+    struct Data {
+        
+        var title: String = ""
+        var attendees = Array<Attendee>()
+        var lengthInMinutes: Double = 0.00
+        var theme: Theme = .seafoam
+    }
+    
+    
+    
     // MARK: - STATIC PROPERTIES
     static let sampleData: Array<DailyScrum> = [
         
@@ -103,6 +116,17 @@ extension DailyScrum {
     
     // MARK: - INITIALIZERS
     // MARK: - COMPUTED PROPERTIES
+    var data: Data {
+        
+        return Data.init(title: title,
+                         attendees: attendees,
+                         lengthInMinutes: Double(lengthInMinutes),
+                         theme: theme)
+    }
+        
+    
+    
+    
     // MARK: - STATIC METHODS
     // MARK: - METHODS
     // MARK: - HELPER METHODS

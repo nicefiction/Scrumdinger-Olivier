@@ -8,6 +8,10 @@ struct DetailView: View {
     // MARK: - NESTED TYPES
     // MARK: - STATIC PROPERTIES
     // MARK: - PROPERTY WRAPPERS
+    @State private var isPresentingEditView: Bool = false
+    
+    
+    
     // MARK: - PROPERTIES
     let dailyScrum: DailyScrum
     
@@ -55,8 +59,43 @@ struct DetailView: View {
             }
         }
         .navigationTitle(dailyScrum.title)
+        .toolbar {
+            Button("Edit",
+                   action: {
+                isPresentingEditView.toggle()
+            })
+        }
+        .sheet(isPresented: $isPresentingEditView) {
+            NavigationView {
+                DetailEditView()
+                    .navigationTitle(dailyScrum.title)
+                    .toolbar {
+                        ToolbarItem(placement: .cancellationAction) {
+                            Button("Cancel") {
+                                isPresentingEditView.toggle() // false
+                            }
+                        }
+                        ToolbarItem(placement: .confirmationAction) {
+                            Button("Done") {
+                                isPresentingEditView.toggle() // false
+                            }
+                        }
+                    }
+            }
+        }
     }
-    
+    /*
+     ToolbarItem(placement: .cancellationAction) {
+                                 Button("Cancel") {
+                                     isPresentingEditView = false
+                                 }
+                             }
+                             ToolbarItem(placement: .confirmationAction) {
+                                 Button("Done") {
+                                     isPresentingEditView = false
+                                 }
+                             }
+     */
     
     
     // MARK: - STATIC METHODS
