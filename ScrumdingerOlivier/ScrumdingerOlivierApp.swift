@@ -9,6 +9,10 @@ struct ScrumdingerOlivierApp: App {
     // MARK: - NESTED TYPES
     // MARK: - STATIC PROPERTIES
     // MARK: - PROPERTY WRAPPERS
+    @State private var dailyScrums = DailyScrum.sampleData
+    
+    
+    
     // MARK: - PROPERTIES
     // MARK: - INITIALIZERS
     // MARK: - COMPUTED PROPERTIES
@@ -17,8 +21,9 @@ struct ScrumdingerOlivierApp: App {
         /// In iOS, the views you add to the `WindowGroup` scene builder
         /// are presented in a window that fills the device’s entire screen:
         WindowGroup {
+            
             NavigationView {
-                ScrumsView(dailyScrums: DailyScrum.sampleData)
+                ScrumsView(dailyScrums: $dailyScrums)
             }
         }
     }

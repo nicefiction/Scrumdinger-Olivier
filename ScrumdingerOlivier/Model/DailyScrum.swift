@@ -16,10 +16,10 @@ struct DailyScrum: Identifiable {
     // MARK: - PROPERTY WRAPPERS
     // MARK: - PROPERTIES
     let id: UUID
-    let title: String
-    let attendees: Array<Attendee>
-    let lengthInMinutes: Int
-    let theme: Theme
+    var title: String
+    var attendees: Array<Attendee>
+    var lengthInMinutes: Int
+    var theme: Theme
     
     
     
@@ -129,5 +129,16 @@ extension DailyScrum {
     
     // MARK: - STATIC METHODS
     // MARK: - METHODS
+    mutating func update(from data: Data)
+    -> Void {
+        
+        title = data.title
+        attendees = data.attendees
+        lengthInMinutes = Int(data.lengthInMinutes)
+        theme = data.theme
+    }
+    
+    
+    
     // MARK: - HELPER METHODS
 }

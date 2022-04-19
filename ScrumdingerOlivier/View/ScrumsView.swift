@@ -9,7 +9,7 @@ struct ScrumsView: View {
     // MARK: - STATIC PROPERTIES
     // MARK: - PROPERTY WRAPPERS
     // MARK: - PROPERTIES
-    let dailyScrums: Array<DailyScrum>
+    @Binding var dailyScrums: Array<DailyScrum>
     
     
     
@@ -18,8 +18,8 @@ struct ScrumsView: View {
     var body: some View {
     
         List {
-            ForEach(dailyScrums) { (eachDailyScrum: DailyScrum) in
-                NavigationLink(destination: DetailView(dailyScrum: eachDailyScrum)) {
+            ForEach($dailyScrums) { $eachDailyScrum in
+                NavigationLink(destination: DetailView(dailyScrum: $eachDailyScrum)) {
                     CardView(dailyScrum: eachDailyScrum)
                 }
                 .listRowBackground(eachDailyScrum.theme.mainColor)
@@ -55,7 +55,7 @@ struct ScrumsView_Previews: PreviewProvider {
         
         NavigationView {
             
-            ScrumsView(dailyScrums: DailyScrum.sampleData)
+            ScrumsView(dailyScrums: .constant(DailyScrum.sampleData))
         }
         //.navigationTitle("Scrumdinger")
     }

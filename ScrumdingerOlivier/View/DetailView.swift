@@ -9,14 +9,11 @@ struct DetailView: View {
     // MARK: - STATIC PROPERTIES
     // MARK: - PROPERTY WRAPPERS
     @State private var isPresentingEditView: Bool = false
-    
+    @State private var data = DailyScrum.Data()
+    @Binding var dailyScrum: DailyScrum
     
     
     // MARK: - PROPERTIES
-    let dailyScrum: DailyScrum
-    
-    
-    
     // MARK: - INITIALIZERS
     // MARK: - COMPUTED PROPERTIES
     var body: some View {
@@ -63,11 +60,12 @@ struct DetailView: View {
             Button("Edit",
                    action: {
                 isPresentingEditView.toggle()
+                data = dailyScrum.data
             })
         }
         .sheet(isPresented: $isPresentingEditView) {
             NavigationView {
-                DetailEditView()
+                DetailEditView(data: $data)
                     .navigationTitle(dailyScrum.title)
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
@@ -75,9 +73,16 @@ struct DetailView: View {
                                 isPresentingEditView.toggle() // false
                             }
                         }
+//                        ToolbarItem(placement: .confirmationAction) {
+//                            Button("Done") {
+//                                isPresentingEditView.toggle() // false
+//                                dailyScrum.upda
+//                            }
+//                        }
                         ToolbarItem(placement: .confirmationAction) {
                             Button("Done") {
-                                isPresentingEditView.toggle() // false
+                                isPresentingEditView = false
+                                dailyScrum.update(from: data)
                             }
                         }
                     }
@@ -116,7 +121,7 @@ struct DetailView_Previews: PreviewProvider {
         
         NavigationView {
             
-            DetailView(dailyScrum: DailyScrum.sampleData[0])
+            DetailView(dailyScrum: .constant(DailyScrum.sampleData[0]))
         }
     }
 }

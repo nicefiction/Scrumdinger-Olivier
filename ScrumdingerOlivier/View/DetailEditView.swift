@@ -11,7 +11,7 @@ struct DetailEditView: View {
 
     // MARK: - NESTED TYPES
     // MARK: - STATIC PROPERTIES
-    @State private var data = DailyScrum.Data.init()
+    @Binding var data: DailyScrum.Data
     @State private var newAttendeeName: String = ""
     
     
@@ -38,6 +38,7 @@ struct DetailEditView: View {
                     /// Hide the `Text `View from VoiceOver:
                         .accessibilityHidden(true)
                 }
+                ThemePicker(selection: $data.theme)
             }
             Section(header: Text("Attendees")) {
                 ForEach(data.attendees) { (eachAttendee: DailyScrum.Attendee) in
@@ -88,6 +89,6 @@ struct DetailEditView_Previews: PreviewProvider {
     // MARK: - COMPUTED PROPERTIES
     static var previews: some View {
         
-        DetailEditView()
+        DetailEditView(data: .constant(DailyScrum.sampleData[0].data))
     }
 }
