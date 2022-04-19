@@ -19,7 +19,7 @@ struct ScrumsView: View {
     
         List {
             ForEach(dailyScrums) { (eachDailyScrum: DailyScrum) in
-                NavigationLink(destination: Text(eachDailyScrum.title)) {
+                NavigationLink(destination: DetailView(dailyScrum: eachDailyScrum)) {
                     CardView(dailyScrum: eachDailyScrum)
                 }
                 .listRowBackground(eachDailyScrum.theme.mainColor)
