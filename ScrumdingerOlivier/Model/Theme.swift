@@ -47,6 +47,11 @@ enum Theme: String {
     }
     
     
+    var name: String {
+        rawValue.capitalized
+    }
+    
+    
     
     // MARK: - STATIC METHODS
     // MARK: - METHODS
