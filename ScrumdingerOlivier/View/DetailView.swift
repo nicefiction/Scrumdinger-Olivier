@@ -9,7 +9,7 @@ struct DetailView: View {
     // MARK: - STATIC PROPERTIES
     // MARK: - PROPERTY WRAPPERS
     @State private var isPresentingEditView: Bool = false
-    @State private var data = DailyScrum.Data()
+    @State private var data = DailyScrum.Data.init()
     @Binding var dailyScrum: DailyScrum
     
     
@@ -20,7 +20,7 @@ struct DetailView: View {
     
         List {
             Section("meeting info") {
-                NavigationLink(destination: {MeetingView()},
+                NavigationLink(destination: {MeetingView(dailyScrum: $dailyScrum)},
                                label: {
                     Label("Start Meeting",
                           systemImage: "timer")
@@ -49,9 +49,24 @@ struct DetailView: View {
                 }
                 .accessibilityElement(children: .combine)
             }
+            
             Section(header: Text("attendees")) {
                 ForEach(dailyScrum.attendees) { (eachAttendee: DailyScrum.Attendee) in
                     Label(eachAttendee.name, systemImage: "person")
+                }
+            }
+            
+            Section(header: Text("history")) {
+                if dailyScrum.history.isEmpty {
+                    Label("No meetings have taken place yet.",
+                          systemImage: "calendar.badge.exclamationmark")
+                }
+                ForEach(dailyScrum.history) { (eachHistory: History) in
+                    HStack {
+                        Image(systemName: "calendar")
+                        Text(eachHistory.date,
+                             style: .date)
+                    }
                 }
             }
         }
@@ -73,12 +88,6 @@ struct DetailView: View {
                                 isPresentingEditView.toggle() // false
                             }
                         }
-//                        ToolbarItem(placement: .confirmationAction) {
-//                            Button("Done") {
-//                                isPresentingEditView.toggle() // false
-//                                dailyScrum.upda
-//                            }
-//                        }
                         ToolbarItem(placement: .confirmationAction) {
                             Button("Done") {
                                 isPresentingEditView = false
@@ -89,18 +98,7 @@ struct DetailView: View {
             }
         }
     }
-    /*
-     ToolbarItem(placement: .cancellationAction) {
-                                 Button("Cancel") {
-                                     isPresentingEditView = false
-                                 }
-                             }
-                             ToolbarItem(placement: .confirmationAction) {
-                                 Button("Done") {
-                                     isPresentingEditView = false
-                                 }
-                             }
-     */
+ 
     
     
     // MARK: - STATIC METHODS

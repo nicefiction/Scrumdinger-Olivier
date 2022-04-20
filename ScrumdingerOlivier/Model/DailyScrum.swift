@@ -1,10 +1,4 @@
-//
-//  DailyScrum.swift
-//  ScrumdingerOlivier
-//
-//  Created by Olivier Van hamme on 18/04/2022.
-//
-
+// MARK: - LIBRARIES
 import Foundation
 
 
@@ -20,6 +14,7 @@ struct DailyScrum: Identifiable {
     var attendees: Array<Attendee>
     var lengthInMinutes: Int
     var theme: Theme
+    var history = Array<History>.init()
     
     
     
@@ -71,7 +66,7 @@ extension DailyScrum {
         init(id: UUID = UUID.init(),
              name: String) {
             
-            self.id = id
+            self.id   = id
             self.name = name
         }
         // MARK: - COMPUTED PROPERTIES
@@ -88,8 +83,8 @@ extension DailyScrum {
     struct Data {
         
         var title: String = ""
-        var attendees = Array<Attendee>()
-        var lengthInMinutes: Double = 0.00
+        var attendees = Array<Attendee>.init()
+        var lengthInMinutes: Double = 5.00
         var theme: Theme = .seafoam
     }
     
@@ -115,6 +110,17 @@ extension DailyScrum {
     
     
     // MARK: - INITIALIZERS
+    init(data: Data) {
+        
+        self.id              = UUID()
+        self.title           = data.title
+        self.attendees       = data.attendees
+        self.lengthInMinutes = Int(data.lengthInMinutes)
+        self.theme           = data.theme
+    }
+    
+    
+    
     // MARK: - COMPUTED PROPERTIES
     var data: Data {
         

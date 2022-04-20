@@ -1,11 +1,7 @@
-//
-//  DetailEditView.swift
-//  ScrumdingerOlivier
-//
-//  Created by Olivier Van hamme on 19/04/2022.
-//
-
+// MARK: - LIBRARIES
 import SwiftUI
+
+
 
 struct DetailEditView: View {
 

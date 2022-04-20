@@ -14,7 +14,6 @@ struct ScrumdingerOlivierApp: App {
     
     
     // MARK: - PROPERTIES
-    // MARK: - INITIALIZERS
     // MARK: - COMPUTED PROPERTIES
     var body: some Scene {
         /// `WindowGroup` is one of the primitive scenes that SwiftUI provides.
@@ -33,6 +32,7 @@ struct ScrumdingerOlivierApp: App {
     // MARK: - STATIC METHODS
     // MARK: - METHODS
     // MARK: - HELPER METHODS
+    // MARK: - INITIALIZERS
 }
 
 
@@ -44,7 +44,6 @@ struct ScrumdingerOlivierApp: App {
  // MARK: - STATIC PROPERTIES
  // MARK: - PROPERTY WRAPPERS
  // MARK: - PROPERTIES
- // MARK: - INITIALIZERS
  // MARK: - COMPUTED PROPERTIES
  var body: some View {
  
@@ -56,17 +55,18 @@ struct ScrumdingerOlivierApp: App {
  // MARK: - STATIC METHODS
  // MARK: - METHODS
  // MARK: - HELPER METHODS
+ // MARK: - INITIALIZERS
  */
 /*
  // MARK: - NESTED TYPES
  // MARK: - STATIC PROPERTIES
  // MARK: - PROPERTY WRAPPERS
  // MARK: - PROPERTIES
- // MARK: - INITIALIZERS
  // MARK: - COMPUTED PROPERTIES
  // MARK: - STATIC METHODS
  // MARK: - METHODS
  // MARK: - HELPER METHODS
+ // MARK: - INITIALIZERS
  */
 /*
  // MARK: - PREVIEWS
