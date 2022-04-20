@@ -2,7 +2,8 @@
 import Foundation
 
 
-struct History: Identifiable {
+struct History: Identifiable,
+                Codable {
     
     // MARK: - NESTED TYPES
     // MARK: - STATIC PROPERTIES

@@ -176,32 +176,3 @@ class ScrumTimer: ObservableObject {
     
     // MARK: - HELPER METHODS
 }
-
-
-
-
-
-extension DailyScrum {
-    
-    /// A new `ScrumTimer` using the meeting length and attendees in the `DailyScrum`.
-    var timer: ScrumTimer {
-        ScrumTimer(lengthInMinutes: lengthInMinutes,
-                   attendees: attendees)
-    }
-}
-
-
-
-
-
-extension Array
-where Element == DailyScrum.Attendee {
-    
-    var speakers: [ScrumTimer.Speaker] {
-        if isEmpty {
-            return [ScrumTimer.Speaker(name: "Speaker 1", isCompleted: false)]
-        } else {
-            return map { ScrumTimer.Speaker(name: $0.name, isCompleted: false) }
-        }
-    }
-}

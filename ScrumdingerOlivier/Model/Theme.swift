@@ -5,7 +5,8 @@ import SwiftUI
 
 enum Theme: String,
             CaseIterable,
-            Identifiable {
+            Identifiable,
+            Codable {
     
     case bubblegum
     case buttercup

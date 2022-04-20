@@ -1,17 +1,6 @@
 // MARK: - LIBRARIES
 import SwiftUI
-/*
- struct DailyScrum {
-     
-     // MARK: - NESTED TYPES
-     // MARK: - STATIC PROPERTIES
-     // MARK: - PROPERTY WRAPPERS
-     // MARK: - PROPERTIES
-     let title: String
-     let attendees: Array<String>
-     let lengthInMinutes: Int
-     let theme: Theme
- */
+
 
 
 struct CardView: View {
