@@ -9,7 +9,8 @@ struct ScrumdingerOlivierApp: App {
     // MARK: - NESTED TYPES
     // MARK: - STATIC PROPERTIES
     // MARK: - PROPERTY WRAPPERS
-    @State private var dailyScrums = DailyScrum.sampleData
+    // @State private var dailyScrums = DailyScrum.sampleData
+    @StateObject private var scrumStore = ScrumStore()
     
     
     
@@ -22,7 +23,18 @@ struct ScrumdingerOlivierApp: App {
         WindowGroup {
             
             NavigationView {
-                ScrumsView(dailyScrums: $dailyScrums)
+                // ScrumsView(dailyScrums: $dailyScrums)
+                ScrumsView(dailyScrums: $scrumStore.dailyScrums)
+            }
+            .onAppear {
+                ScrumStore.load { result in
+                    switch result {
+                    case .failure(let error):
+                        fatalError(error.localizedDescription)
+                    case .success(let dailyScrums):
+                        scrumStore.dailyScrums = dailyScrums
+                    }
+                }
             }
         }
     }
