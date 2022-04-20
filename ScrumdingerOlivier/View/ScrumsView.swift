@@ -12,11 +12,16 @@ struct ScrumsView: View {
     /// The `newScrumData` property is the source of truth
     /// for all the changes the user makes to the new scrum.
     @Binding var dailyScrums: Array<DailyScrum>
+    @Environment(\.scenePhase) private var scenePhase
     
     
     
     // MARK: - PROPERTY WRAPPERS
     // MARK: - PROPERTIES
+    let saveAction: () -> Void
+    
+    
+    
     // MARK: - INITIALIZERS
     // MARK: - COMPUTED PROPERTIES
     var body: some View {
@@ -64,6 +69,9 @@ struct ScrumsView: View {
                     })
             }
         }
+        .onChange(of: scenePhase) { phase in
+            if phase == .inactive { saveAction() }
+        }
     }
     
     
@@ -86,7 +94,10 @@ struct ScrumsView_Previews: PreviewProvider {
         
         NavigationView {
             
-            ScrumsView(dailyScrums: .constant(DailyScrum.sampleData))
+            ScrumsView(dailyScrums: .constant(DailyScrum.sampleData),
+                       saveAction: {})
+            /// You’ll provide the `saveAction` closure
+            /// when instantiating `ScrumsView`.
         }
         //.navigationTitle("Scrumdinger")
     }

@@ -24,7 +24,13 @@ struct ScrumdingerOlivierApp: App {
             
             NavigationView {
                 // ScrumsView(dailyScrums: $dailyScrums)
-                ScrumsView(dailyScrums: $scrumStore.dailyScrums)
+                ScrumsView(dailyScrums: $scrumStore.dailyScrums) {
+                    ScrumStore.save(scrums: scrumStore.dailyScrums) { result in
+                        if case .failure(let error) = result {
+                            fatalError(error.localizedDescription)
+                        }
+                    }
+                }
             }
             .onAppear {
                 ScrumStore.load { result in
