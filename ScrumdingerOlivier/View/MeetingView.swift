@@ -17,6 +17,8 @@ struct MeetingView: View {
     /// which is an `ObservableObject`,
     /// to the `MeetingView` life cycle:
     @StateObject var scrumTimer = ScrumTimer.init()
+    @StateObject var speechRecognizer = SpeechRecognizer.init()
+    @State private var isRecording: Bool = false
 
 
 
@@ -53,10 +55,15 @@ struct MeetingView: View {
                 player.seek(to: .zero)
                 player.play()
             }
+            speechRecognizer.reset()
+            speechRecognizer.transcribe()
+            isRecording = true
             scrumTimer.startScrum()
         }
         .onDisappear {
             scrumTimer.stopScrum()
+            speechRecognizer.stopTranscribing()
+            isRecording = false
             let newHistory = History.init(attendees: dailyScrum.attendees,
                                           lengthInMinutes: dailyScrum.timer.secondsElapsed / 60)
             dailyScrum.history.insert(newHistory,
