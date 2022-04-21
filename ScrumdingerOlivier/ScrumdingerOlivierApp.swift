@@ -6,7 +6,6 @@ import SwiftUI
 @main
 struct ScrumdingerOlivierApp: App {
     
-    // MARK: - NESTED TYPES
     // MARK: - STATIC PROPERTIES
     // MARK: - PROPERTY WRAPPERS
     // @State private var dailyScrums = DailyScrum.sampleData
@@ -82,7 +81,6 @@ struct ScrumdingerOlivierApp: App {
 
 
 /*
- // MARK: - NESTED TYPES
  // MARK: - STATIC PROPERTIES
  // MARK: - PROPERTY WRAPPERS
  // MARK: - PROPERTIES
@@ -95,18 +93,17 @@ struct ScrumdingerOlivierApp: App {
  
  
  // MARK: - STATIC METHODS
+ // MARK: - INITIALIZERS
  // MARK: - METHODS
  // MARK: - HELPER METHODS
- // MARK: - INITIALIZERS
  */
 /*
- // MARK: - NESTED TYPES
  // MARK: - STATIC PROPERTIES
  // MARK: - PROPERTY WRAPPERS
  // MARK: - PROPERTIES
  // MARK: - COMPUTED PROPERTIES
- // MARK: - INITIALIZERS
  // MARK: - STATIC METHODS
+ // MARK: - INITIALIZERS
  // MARK: - METHODS
  // MARK: - HELPER METHODS
  */

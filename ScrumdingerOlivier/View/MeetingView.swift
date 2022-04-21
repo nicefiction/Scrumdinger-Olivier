@@ -66,7 +66,8 @@ struct MeetingView: View {
             speechRecognizer.stopTranscribing()
             isRecording = false
             let newHistory = History.init(attendees: dailyScrum.attendees,
-                                          lengthInMinutes: dailyScrum.timer.secondsElapsed / 60)
+                                          lengthInMinutes: dailyScrum.timer.secondsElapsed / 60,
+                                          transcript: speechRecognizer.transcript)
             dailyScrum.history.insert(newHistory,
                                       at: 0)
         }

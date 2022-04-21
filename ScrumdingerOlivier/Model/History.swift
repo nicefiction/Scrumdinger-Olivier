@@ -13,6 +13,7 @@ struct History: Identifiable,
     let date: Date
     var attendees: Array<DailyScrum.Attendee>
     var lengthInMinutes: Int
+    var transcript: String?
     
     
     
@@ -20,12 +21,14 @@ struct History: Identifiable,
     init(id: UUID = UUID.init(),
          date: Date = Date.init(),
          attendees: Array<DailyScrum.Attendee>,
-         lengthInMinutes: Int = 5) {
+         lengthInMinutes: Int = 5,
+         transcript: String? = nil) {
         
         self.id              = id
         self.date            = date
         self.attendees       = attendees
         self.lengthInMinutes = lengthInMinutes
+        self.transcript      = transcript
     }
     
     
