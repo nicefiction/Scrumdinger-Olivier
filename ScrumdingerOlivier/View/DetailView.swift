@@ -62,10 +62,14 @@ struct DetailView: View {
                           systemImage: "calendar.badge.exclamationmark")
                 }
                 ForEach(dailyScrum.history) { (eachHistory: History) in
-                    HStack {
-                        Image(systemName: "calendar")
-                        Text(eachHistory.date,
-                             style: .date)
+                    NavigationLink {
+                        HistoryView(history: eachHistory)
+                    } label: {
+                        HStack {
+                            Image(systemName: "calendar")
+                            Text(eachHistory.date,
+                                 style: .date)
+                        }
                     }
                 }
             }
