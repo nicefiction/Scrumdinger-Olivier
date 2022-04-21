@@ -5,11 +5,11 @@ import SwiftUI
 
 struct MeetingTimerView: View {
     
-    // MARK: - NESTED TYPES
     // MARK: - STATIC PROPERTIES
     // MARK: - PROPERTY WRAPPERS
     // MARK: - PROPERTIES
     let speakers: Array<ScrumTimer.Speaker>
+    let isRecording: Bool
     let theme: Theme
     
     
@@ -32,6 +32,10 @@ struct MeetingTimerView: View {
                     Text(currentSpeaker)
                         .font(.title)
                     Text("is speaking")
+                    Image(systemName: isRecording ? "mic" : "mic.slash")
+                        .font(.title)
+                        .padding(.top)
+                        .accessibilityLabel(isRecording ? "with transcription" : "without transcription")
                 }
                     .accessibilityElement(children: .combine)
                     .foregroundStyle(theme.accentColor)
@@ -69,10 +73,6 @@ struct MeetingTimerView: View {
 // MARK: - PREVIEWS
 struct MeetingTimerView_Previews: PreviewProvider {
     
-    // MARK: - NESTED TYPES
-    // MARK: - STATIC PROPERTIES
-    // MARK: - PROPERTY WRAPPERS
-    // MARK: - PROPERTIES
     // MARK: - COMPUTED PROPERTIES
     static var speakers: [ScrumTimer.Speaker] {
         [ScrumTimer.Speaker(name: "Bill", isCompleted: true),
@@ -82,11 +82,8 @@ struct MeetingTimerView_Previews: PreviewProvider {
     
     static var previews: some View {
         
-        MeetingTimerView(speakers: speakers, theme: Theme.yellow)
+        MeetingTimerView(speakers: speakers,
+                         isRecording: true,
+                         theme: Theme.yellow)
     }
-    // MARK: - INITIALIZERS
-    // MARK: - STATIC METHODS
-    // MARK: - METHODS
-    // MARK: - HELPER METHODS
-    
 }
