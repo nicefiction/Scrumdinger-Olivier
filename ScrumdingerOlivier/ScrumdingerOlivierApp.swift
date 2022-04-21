@@ -11,6 +11,7 @@ struct ScrumdingerOlivierApp: App {
     // MARK: - PROPERTY WRAPPERS
     // @State private var dailyScrums = DailyScrum.sampleData
     @StateObject private var scrumStore = ScrumStore()
+    @State private var errorWrapper: ErrorWrapper?
     
     
     
@@ -35,8 +36,9 @@ struct ScrumdingerOlivierApp: App {
                         do {
                             try await ScrumStore.save(scrums: scrumStore.dailyScrums)
                         } catch let error {
-                            print(error.localizedDescription)
-                            fatalError("Error saving scrums.")
+                            // fatalError("Error saving scrums.")
+                            errorWrapper = ErrorWrapper(error: error,
+                                                        guidance: "Try again later.")
                         }
                     }
                 }
@@ -55,8 +57,14 @@ struct ScrumdingerOlivierApp: App {
                 do {
                     scrumStore.dailyScrums = try await ScrumStore.load()
                 } catch {
-                    fatalError("Error loading scrums.")
+                    // fatalError("Error loading scrums.")
+                    errorWrapper = ErrorWrapper(error: error, guidance: "Scrumdinger will load sample data and continue.")
                 }
+            }
+            .sheet(item: $errorWrapper, onDismiss: {
+                scrumStore.dailyScrums = DailyScrum.sampleData
+            }) { wrapper in
+                ErrorView(errorWrapper: wrapper)
             }
         }
     }

@@ -8,6 +8,15 @@ struct ErrorView: View {
     // MARK: - NESTED TYPES
     // MARK: - STATIC PROPERTIES
     // MARK: - PROPERTY WRAPPERS
+    /// With the `@Environment `property wrapper,
+    /// you can read a value that the view’s environment stores,
+    /// such as the view’s presentation mode, scene phase, visibility, or color scheme.
+    /// In this case, you access the view’s dismiss structure
+    /// and call it like a function to dismiss the view:
+    @Environment(\.dismiss) private var dismiss
+    
+    
+    
     // MARK: - PROPERTIES
     let errorWrapper: ErrorWrapper
     
@@ -16,20 +25,30 @@ struct ErrorView: View {
     // MARK: - COMPUTED PROPERTIES
     var body: some View {
     
-        VStack {
-            Text("An error has occured.")
-                .font(.title)
-                .padding(.bottom)
-            Text(errorWrapper.error.localizedDescription)
-                .font(.headline)
-            Text(errorWrapper.guidance)
-                .font(.caption)
-                .padding(.top)
-            Spacer()
+        NavigationView {
+            VStack {
+                Text("An error has occured.")
+                    .font(.title)
+                    .padding(.bottom)
+                Text(errorWrapper.error.localizedDescription)
+                    .font(.headline)
+                Text(errorWrapper.guidance)
+                    .font(.caption)
+                    .padding(.top)
+                Spacer()
+            }
+            .padding()
+            .background(.ultraThinMaterial)
+            .cornerRadius(16.0)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Dismiss") {
+                        dismiss()
+                    }
+                }
+            }
         }
-        .padding()
-        .background(.ultraThinMaterial)
-        .cornerRadius(16.0)
     }
     
     
