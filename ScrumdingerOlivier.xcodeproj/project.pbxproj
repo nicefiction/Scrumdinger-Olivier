@@ -33,6 +33,10 @@
 		C53A5F1428115ED000EC3C9D /* MeetingTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53A5F1328115ED000EC3C9D /* MeetingTimerView.swift */; };
 		C53A5F162811630400EC3C9D /* ScrumTimer - Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53A5F152811630400EC3C9D /* ScrumTimer - Speaker.swift */; };
 		C53A5F192811914400EC3C9D /* SpeakerArc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53A5F182811914400EC3C9D /* SpeakerArc.swift */; };
+		C53A5F1B2811A00700EC3C9D /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53A5F1A2811A00700EC3C9D /* SpeechRecognizer.swift */; };
+		C53A5F1D2811A09200EC3C9D /* SpeechRecognizer - RecognizerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53A5F1C2811A09200EC3C9D /* SpeechRecognizer - RecognizerError.swift */; };
+		C53A5F1F2811A21000EC3C9D /* SFSpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53A5F1E2811A21000EC3C9D /* SFSpeechRecognizer.swift */; };
+		C53A5F212811A28400EC3C9D /* AVAudioSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53A5F202811A28400EC3C9D /* AVAudioSession.swift */; };
 		C57838B2280EF48700D40214 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57838B1280EF48700D40214 /* ThemeView.swift */; };
 		C57838B4280EF84100D40214 /* ThemePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57838B3280EF84100D40214 /* ThemePicker.swift */; };
 		C5C2FA62280F3C8A004733F4 /* MeetingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C2FA61280F3C8A004733F4 /* MeetingHeaderView.swift */; };
@@ -69,6 +73,10 @@
 		C53A5F1328115ED000EC3C9D /* MeetingTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingTimerView.swift; sourceTree = "<group>"; };
 		C53A5F152811630400EC3C9D /* ScrumTimer - Speaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScrumTimer - Speaker.swift"; sourceTree = "<group>"; };
 		C53A5F182811914400EC3C9D /* SpeakerArc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerArc.swift; sourceTree = "<group>"; };
+		C53A5F1A2811A00700EC3C9D /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
+		C53A5F1C2811A09200EC3C9D /* SpeechRecognizer - RecognizerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpeechRecognizer - RecognizerError.swift"; sourceTree = "<group>"; };
+		C53A5F1E2811A21000EC3C9D /* SFSpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSpeechRecognizer.swift; sourceTree = "<group>"; };
+		C53A5F202811A28400EC3C9D /* AVAudioSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVAudioSession.swift; sourceTree = "<group>"; };
 		C57838B1280EF48700D40214 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
 		C57838B3280EF84100D40214 /* ThemePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePicker.swift; sourceTree = "<group>"; };
 		C5C2FA61280F3C8A004733F4 /* MeetingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingHeaderView.swift; sourceTree = "<group>"; };
@@ -134,6 +142,7 @@
 				C53A5EFC28100CEF00EC3C9D /* History.swift */,
 				C53A5F0A2810502B00EC3C9D /* ScrumStore.swift */,
 				C5C2FA65280F48A7004733F4 /* ScrumTimer.swift */,
+				C53A5F1A2811A00700EC3C9D /* SpeechRecognizer.swift */,
 				C5080CD2280DD6CA00B48BFD /* Theme.swift */,
 				C5080CD9280DEE3D00B48BFD /* TrailingIconLabelStyle.swift */,
 			);
@@ -160,6 +169,8 @@
 		C53A5EF6280FFE3700EC3C9D /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				C53A5F202811A28400EC3C9D /* AVAudioSession.swift */,
+				C53A5F1E2811A21000EC3C9D /* SFSpeechRecognizer.swift */,
 				C53A5F0428104D7B00EC3C9D /* Array + DailyScrum.swift */,
 				C53A5EF7280FFE5800EC3C9D /* AVPlayer + Ding.swift */,
 				C53A5F0628104E3100EC3C9D /* DailyScrum + ScrumTimer.swift */,
@@ -167,6 +178,7 @@
 				C53A5EFE28104A1000EC3C9D /* DailyScrum - Attendee.swift */,
 				C53A5F0028104A9400EC3C9D /* DailyScrum - Data.swift */,
 				C53A5F152811630400EC3C9D /* ScrumTimer - Speaker.swift */,
+				C53A5F1C2811A09200EC3C9D /* SpeechRecognizer - RecognizerError.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -283,9 +295,11 @@
 				C53A5EFD28100CEF00EC3C9D /* History.swift in Sources */,
 				C53A5F192811914400EC3C9D /* SpeakerArc.swift in Sources */,
 				C57838B4280EF84100D40214 /* ThemePicker.swift in Sources */,
+				C53A5F1B2811A00700EC3C9D /* SpeechRecognizer.swift in Sources */,
 				C53A5F0528104D7B00EC3C9D /* Array + DailyScrum.swift in Sources */,
 				C5C2FA64280F473F004733F4 /* ScrumProgressViewStyle.swift in Sources */,
 				C5C2FA69280F4E41004733F4 /* MeetingFooterView.swift in Sources */,
+				C53A5F1D2811A09200EC3C9D /* SpeechRecognizer - RecognizerError.swift in Sources */,
 				C5C2FA66280F48A7004733F4 /* ScrumTimer.swift in Sources */,
 				C5080CD5280DD8D300B48BFD /* DailyScrum.swift in Sources */,
 				C5080CDE280EA19500B48BFD /* DetailView.swift in Sources */,
@@ -296,6 +310,7 @@
 				C53A5F1028114A1500EC3C9D /* ErrorWrapper.swift in Sources */,
 				C5080CDA280DEE3D00B48BFD /* TrailingIconLabelStyle.swift in Sources */,
 				C53A5F0E281130D100EC3C9D /* ScrumsListSeparator.swift in Sources */,
+				C53A5F212811A28400EC3C9D /* AVAudioSession.swift in Sources */,
 				C5080CD3280DD6CA00B48BFD /* Theme.swift in Sources */,
 				C5080CDC280DF4F800B48BFD /* ScrumsView.swift in Sources */,
 				C5080CC5280DBA1900B48BFD /* MeetingView.swift in Sources */,
@@ -304,6 +319,7 @@
 				C53A5F0B2810502B00EC3C9D /* ScrumStore.swift in Sources */,
 				C5080CC3280DBA1900B48BFD /* ScrumdingerOlivierApp.swift in Sources */,
 				C57838B2280EF48700D40214 /* ThemeView.swift in Sources */,
+				C53A5F1F2811A21000EC3C9D /* SFSpeechRecognizer.swift in Sources */,
 				C53A5F1428115ED000EC3C9D /* MeetingTimerView.swift in Sources */,
 				C5080CD8280DDD9600B48BFD /* CardView.swift in Sources */,
 				C53A5EF8280FFE5800EC3C9D /* AVPlayer + Ding.swift in Sources */,
@@ -438,6 +454,8 @@
 				DEVELOPMENT_TEAM = PKTBX2CYQK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to transcribe the meeting. Audio recordings are discarded after transcription.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "You can view a text transcription of your meeting in the app.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -468,6 +486,8 @@
 				DEVELOPMENT_TEAM = PKTBX2CYQK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to transcribe the meeting. Audio recordings are discarded after transcription.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "You can view a text transcription of your meeting in the app.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
