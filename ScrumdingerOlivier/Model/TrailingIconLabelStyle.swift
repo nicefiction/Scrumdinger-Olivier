@@ -6,7 +6,6 @@ import SwiftUI
 
 struct TrailingIconLabelStyle: LabelStyle {
     
-    // MARK: - NESTED TYPES
     // MARK: - STATIC PROPERTIES
     // MARK: - PROPERTY WRAPPERS
     // MARK: - PROPERTIES
