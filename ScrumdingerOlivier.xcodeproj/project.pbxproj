@@ -143,9 +143,9 @@
 		C5080CD1280DBAE300B48BFD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C5C2FA67280F4DB1004733F4 /* Components */,
+				C5C2FA67280F4DB1004733F4 /* Component */,
 				C53A5F0C281130AC00EC3C9D /* Modifier */,
-				C53A5F17281166C000EC3C9D /* Shapes */,
+				C53A5F17281166C000EC3C9D /* Shape */,
 				C5080CDD280EA19500B48BFD /* DetailView.swift */,
 				C5080CDF280EE29800B48BFD /* DetailEditView.swift */,
 				C53A5F1128114B9A00EC3C9D /* ErrorView.swift */,
@@ -187,15 +187,15 @@
 			path = Modifier;
 			sourceTree = "<group>";
 		};
-		C53A5F17281166C000EC3C9D /* Shapes */ = {
+		C53A5F17281166C000EC3C9D /* Shape */ = {
 			isa = PBXGroup;
 			children = (
 				C53A5F182811914400EC3C9D /* SpeakerArc.swift */,
 			);
-			path = Shapes;
+			path = Shape;
 			sourceTree = "<group>";
 		};
-		C5C2FA67280F4DB1004733F4 /* Components */ = {
+		C5C2FA67280F4DB1004733F4 /* Component */ = {
 			isa = PBXGroup;
 			children = (
 				C5080CD7280DDD9600B48BFD /* CardView.swift */,
@@ -204,7 +204,7 @@
 				C53A5F1328115ED000EC3C9D /* MeetingTimerView.swift */,
 				C5C2FA63280F473F004733F4 /* ScrumProgressViewStyle.swift */,
 			);
-			path = Components;
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
